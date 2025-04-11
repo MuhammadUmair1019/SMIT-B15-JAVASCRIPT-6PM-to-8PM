@@ -4,7 +4,7 @@ let products = [
     title: "Sony LED 40 inch",
     variations: [
       { id: 1, color: "black", price: 50000, quantity: 5 },
-      { id: 2, color: "red", price: 50000, quantity: 1 },
+      { id: 2, color: "red", price: 40000, quantity: 1 },
       { id: 3, color: "silver", price: 55000, quantity: 8 },
     ],
     reviews: [
@@ -18,7 +18,7 @@ let products = [
     title: "Mobile",
     variations: [
       { id: 1, color: "black", price: 50000, quantity: 5 },
-      { id: 2, color: "red", price: 50000, quantity: 1 },
+      { id: 2, color: "red", price: 650000, quantity: 1 },
       { id: 3, color: "silver", price: 55000, quantity: 8 },
     ],
     reviews: [
@@ -39,6 +39,53 @@ let products = [
     ],
   },
 ];
+
+// for (let j = 0; j < products.length; j++) {
+//   let product = products[j];
+//   let maxPrice = 0;
+//   let maxVariations = null;
+//   for (let i = 0; i < product.variations.length; i++) {
+//     if (product.variations[i].price > maxPrice) {
+//       maxPrice = product.variations[i].price;
+//       maxVariations = product.variations[i];
+//     }
+//   }
+//   // console.log(maxPrice);
+//   // console.log(maxVariations);
+//   // console.log(products[j].title + ' - ' + maxVariations.color + "(" + maxPrice + ")")
+//   // console.log(`${products[j].title} - ${maxVariations.color} (${maxPrice})`);
+// }
+
+// console.log(product);
+console.log("*****************************");
+
+// 9. Find the Most Expensive Variation of Each Product
+// console.log("Most Expensive Variation for Each Product:");
+// for (let i = 0; i < products.length; i++) {
+//   let maxPrice = 0;
+//   let expensiveVariation = null;
+//   for (let j = 0; j < products[i].variations.length; j++) {
+//     if (products[i].variations[j].price > maxPrice) {
+//       maxPrice = products[i].variations[j].price;
+//       expensiveVariation = products[i].variations[j];
+//     }
+//   }
+//   console.log(
+//     `${products[i].title} - ${expensiveVariation.color} (${maxPrice})`
+//   );
+// }
+
+// let marks = [2, 4, 20, 10, 15];
+
+// let max = 0;
+
+// for (let i = 0; i < marks.length; i++) {
+//   if (marks[i] > max) {
+//     max = marks[i];
+//   }
+// }
+
+// console.log(max);
 
 // 1. Find a Product by ID
 let productId = 102;
@@ -90,6 +137,7 @@ for (let i = 0; i < products.length; i++) {
 }
 
 // 6. Find the Highest Rated Product
+console.log("*************Highest Rated*************");
 let highestRatedProduct = null;
 let highestRating = 0;
 for (let i = 0; i < products.length; i++) {
@@ -98,12 +146,31 @@ for (let i = 0; i < products.length; i++) {
     sum += products[i].reviews[j].rating;
   }
   let avgRating = sum / products[i].reviews.length;
+
   if (avgRating > highestRating) {
     highestRating = avgRating;
-    highestRatedProduct = products[i].title;
+    highestRatedProduct = products[i];
   }
 }
-console.log("Highest Rated Product:", highestRatedProduct);
+
+console.log("Highest Rated Product: " + highestRatedProduct.title);
+console.log(highestRating);
+console.log(highestRatedProduct);
+
+// let highestRatedProduct = null;
+// let highestRating = 0;
+// for (let i = 0; i < products.length; i++) {
+//   let sum = 0;
+//   for (let j = 0; j < products[i].reviews.length; j++) {
+//     sum += products[i].reviews[j].rating;
+//   }
+//   let avgRating = sum / products[i].reviews.length;
+//   if (avgRating > highestRating) {
+//     highestRating = avgRating;
+//     highestRatedProduct = products[i].title;
+//   }
+// }
+// console.log("Highest Rated Product:", highestRatedProduct);
 
 // 7. Filter Active Reviews for a Product
 console.log("Active Reviews for Product 101:");
@@ -141,22 +208,6 @@ for (let i = 0; i < products.length - 1; i++) {
 }
 console.log("Products Sorted by Rating:", products);
 
-// 9. Find the Most Expensive Variation of Each Product
-console.log("Most Expensive Variation for Each Product:");
-for (let i = 0; i < products.length; i++) {
-  let maxPrice = 0;
-  let expensiveVariation = null;
-  for (let j = 0; j < products[i].variations.length; j++) {
-    if (products[i].variations[j].price > maxPrice) {
-      maxPrice = products[i].variations[j].price;
-      expensiveVariation = products[i].variations[j];
-    }
-  }
-  console.log(
-    `${products[i].title} - ${expensiveVariation.color} (${maxPrice})`
-  );
-}
-
 // 10. Calculate Total Stock Value
 let totalStockValue = 0;
 for (let i = 0; i < products.length; i++) {
@@ -166,3 +217,54 @@ for (let i = 0; i < products.length; i++) {
   }
 }
 console.log("Total Stock Value:", totalStockValue);
+
+// -----------------------------------------------------
+
+// console.log("Most Expensive Variation for Each Product:");
+
+// for (var i = 0; i < products.length; i++) {
+//     var mostExpensive = products[i].variations[0]; // Start with the first variation
+
+//     for (var j = 1; j < products[i].variations.length; j++) {
+//         if (products[i].variations[j].price > mostExpensive.price) {
+//             mostExpensive = products[i].variations[j];
+//         }
+//     }
+
+//     console.log("Product " + products[i].id + " = " + products[i].title + " - " + mostExpensive.color + " (" + mostExpensive.price + ")");
+// }
+
+// for (let i = 0; i < products.length; i++) {
+//   let product = products[i];
+//   console.log("Product:", product.title); // Print product title
+
+//   for (let j = 0; j < product.reviews.length; j++) {
+//     let review = product.reviews[j];
+
+//     if (review.status === true) {
+//       console.log(JSON.stringify({
+//         name: review.name,
+//         rating: review.rating,
+//         comment: review.comment
+//       }));
+//     }
+//   }
+
+//   console.log("-----"); // Just for separating products
+// }
+
+// for (var i = 0; i < products.length; i++) {
+//   var product = products[i];
+//   var hasLowStock = false;
+
+//   for (var j = 0; j < product.variations.length; j++) {
+//       if (product.variations[j].quantity < 2) {
+//           hasLowStock = true;
+//           break;
+//       }
+//   }
+
+//   if (hasLowStock) {
+//       console.log(product.title);
+//   }
+// }

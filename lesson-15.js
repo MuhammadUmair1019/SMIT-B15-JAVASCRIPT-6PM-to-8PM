@@ -33,47 +33,47 @@
 // console.log(names)
 
 // ---------------------------------------------------------
-// let products = [
-//   {
-//     id: 101,
-//     title: "Sony LED 40 inch",
-//     variations: [
-//       { id: 1, color: "black", price: 50000, quantity: 5 },
-//       { id: 2, color: "red", price: 50000, quantity: 1 },
-//       { id: 3, color: "silver", price: 2000, quantity: 8 },
-//     ],
-//     reviews: [
-//       { id: 1, user: "Ahmad", rating: 4.0, status: true },
-//       { id: 2, user: "Zubair", rating: 4.5, status: false },
-//       { id: 3, user: "Ali", rating: 5.0, status: true },
-//     ],
-//   },
-//   {
-//     id: 102,
-//     title: "Mobile",
-//     variations: [
-//       { id: 1, color: "black", price: 50000, quantity: 5 },
-//       { id: 2, color: "red", price: 20000, quantity: 1 },
-//       { id: 3, color: "silver", price: 55000, quantity: 8 },
-//     ],
-//     reviews: [
-//       { id: 1, user: "Ahmad", rating: 4.0, status: true },
-//       { id: 2, user: "Zubair", rating: 4.5, status: false },
-//     ],
-//   },
-//   {
-//     id: 103,
-//     title: "Bike",
-//     variations: [
-//       { id: 1, color: "green", price: 55000, quantity: 5 },
-//       { id: 2, color: "red", price: 1000, quantity: 1 },
-//     ],
-//     reviews: [
-//       { id: 1, user: "Ahmad", rating: 4.0, status: true },
-//       { id: 2, user: "Zubair", rating: 3.0, status: false },
-//     ],
-//   },
-// ];
+let products = [
+  {
+    id: 101,
+    title: "Sony LED 40 inch",
+    variations: [
+      { id: 1, color: "black", price: 50000, quantity: 5 },
+      { id: 2, color: "red", price: 50000, quantity: 1 },
+      { id: 3, color: "silver", price: 2000, quantity: 8 },
+    ],
+    reviews: [
+      { id: 1, user: "Ahmad", rating: 4.0, status: true },
+      { id: 2, user: "Zubair", rating: 4.5, status: false },
+      { id: 3, user: "Ali", rating: 5.0, status: true },
+    ],
+  },
+  {
+    id: 102,
+    title: "Mobile",
+    variations: [
+      { id: 1, color: "black", price: 50000, quantity: 5 },
+      { id: 2, color: "red", price: 20000, quantity: 1 },
+      { id: 3, color: "silver", price: 55000, quantity: 8 },
+    ],
+    reviews: [
+      { id: 1, user: "Ahmad", rating: 4.0, status: true },
+      { id: 2, user: "Zubair", rating: 4.5, status: false },
+    ],
+  },
+  {
+    id: 103,
+    title: "Bike",
+    variations: [
+      { id: 1, color: "green", price: 55000, quantity: 5 },
+      { id: 2, color: "red", price: 1000, quantity: 1 },
+    ],
+    reviews: [
+      { id: 1, user: "Ahmad", rating: 4.0, status: true },
+      { id: 2, user: "Zubair", rating: 3.0, status: false },
+    ],
+  },
+];
 
 // ---------------------------------------------------------------
 // let minVariations = products.map((product) =>
