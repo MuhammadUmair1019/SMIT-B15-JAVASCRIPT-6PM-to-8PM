@@ -1,12 +1,13 @@
-// const grandparent = document.querySelector(".grandparent");
-// const parent = document.querySelector(".parent");
-// const child = document.querySelector(".child");
-// const body = document.body;
+const grandparent = document.querySelector(".grandparent");
+const parent = document.querySelector(".parent");
+const child = document.querySelector(".child");
+const body = document.body;
 
 // event delegation
 
 // grandparent.addEventListener("click", (e) => {
-//     console.log(e.target)
+//   console.log(e.target)
+//     // console.log(e.target)
 //   console.log("Bubble Grandparent");
 // });
 
@@ -48,7 +49,8 @@
 //     console.log('Bubble Parent')
 // })
 
-// child.addEventListener("click", () => {
+// child.addEventListener("click", (e) => {
+//   e.stopPropagation()
 //   console.log("Bubble Child");
 // });
 
@@ -56,6 +58,32 @@
 const button = document.querySelector("button");
 const items = document.querySelectorAll("ul li");
 const ul = document.querySelector("ul");
+
+
+button.addEventListener("click", () => {
+  console.log("you clicked");
+  const li = document.createElement("li")
+
+  li.textContent = "new todo"
+  ul.append(li)
+  // ul.innerHTML += `<li> new todo</li>`;
+});
+
+ul.addEventListener("click", (e) => {
+  e.target.classList.add("completed")
+  e.target.remove()
+  console.log(e.target)
+})
+
+// items.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     // item.style.textDecoration = 'line-through'
+//     item.classList.add("completed");
+//     console.log("you clicked", item.classList);
+//   });
+// });
+
+console.log(items)
 
 // items[0].addEventListener("click", () => {
 //     console.log(items[0])
@@ -65,11 +93,11 @@ const ul = document.querySelector("ul");
 //     console.log(items[1])
 // })
 
-ul.addEventListener("click", (e) => {
-    // e.target.style.textDecoration = "line-through";
-    e.target.remove()
-    // console.log()
-})
+// ul.addEventListener("click", (e) => {
+//     e.target.style.textDecoration = "line-through";
+//     // e.target.remove()
+//     // console.log()
+// })
 // items.forEach((item) => {
 //     item.addEventListener("click", () => {
 //       item.style.textDecoration = "line-through";
@@ -77,19 +105,19 @@ ul.addEventListener("click", (e) => {
 //     });
 //   });
 
-button.addEventListener("click", () => {
-  let li = document.createElement("li")
-  li.textContent = 'New todo'
-  ul.append(li)
+// button.addEventListener("click", () => {
+//   let li = document.createElement("li")
+//   li.textContent = 'New todo'
+//   ul.append(li)
 
-//   ul.innerHTML += `<li>New todo </li>`;
-});
+// //   ul.innerHTML += `<li>New todo </li>`;
+// });
 
-console.log(items);
+// console.log(items);
 
-button.onclick = function () {
-    console.log('you clicked')
-}
+// button.onclick = function () {
+//     console.log('you clicked')
+// }
 
 // Traversing nodes
 // const list = document.getElementsByClassName("list")
